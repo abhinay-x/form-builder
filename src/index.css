@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 hover:border-gray-400 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .textarea-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-vertical min-h-[100px];
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+
+  .card-hover {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+
+  .question-card {
+    @apply bg-white rounded-lg border-2 border-gray-200 p-4 hover:border-primary-300 transition-all duration-200;
+  }
+
+  .question-card.selected {
+    @apply border-primary-500 bg-primary-50;
+  }
+
+  .dragging {
+    @apply opacity-50 transform scale-95;
+  }
+
+  .drop-zone {
+    @apply border-2 border-dashed border-gray-300 rounded-lg p-4 transition-colors duration-200;
+  }
+
+  .drop-zone.active {
+    @apply border-primary-500 bg-primary-50;
+  }
+
+  .loading-spinner {
+    @apply inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600;
+  }
+
+  .progress-bar {
+    @apply w-full bg-gray-200 rounded-full h-2;
+  }
+
+  .progress-fill {
+    @apply bg-primary-600 h-2 rounded-full transition-all duration-300 ease-out;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Form builder specific styles */
+.form-builder-sidebar {
+  @apply w-80 bg-white border-r border-gray-200 overflow-y-auto;
+}
+
+.form-builder-main {
+  @apply flex-1 p-6 overflow-y-auto;
+}
+
+.question-type-item {
+  @apply flex items-center p-3 rounded-lg border border-gray-200 hover:border-primary-300 hover:bg-primary-50 cursor-pointer transition-all duration-200;
+}
+
+.question-type-item.dragging {
+  @apply transform rotate-2 scale-105 shadow-lg;
+}
+
+/* Drag and drop styles */
+.category-drop-zone {
+  @apply min-h-[60px] p-3 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg transition-colors duration-200;
+}
+
+.category-drop-zone.drag-over {
+  @apply border-primary-500 bg-primary-50;
+}
+
+.draggable-item {
+  @apply bg-white border border-gray-200 rounded-lg p-2 cursor-move hover:shadow-sm transition-all duration-200;
+}
+
+.draggable-item.dragging {
+  @apply opacity-50 transform rotate-1;
+}
+
+/* Cloze question styles */
+.cloze-sentence {
+  @apply text-lg leading-relaxed;
+}
+
+.cloze-blank {
+  @apply inline-block min-w-[100px] px-2 py-1 mx-1 border-b-2 border-primary-400 bg-transparent text-center focus:outline-none focus:border-primary-600;
+}
+
+/* Responsive utilities */
+@screen sm {
+  .form-builder-sidebar {
+    @apply w-64;
+  }
+}
+
+@screen lg {
+  .form-builder-sidebar {
+    @apply w-80;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
