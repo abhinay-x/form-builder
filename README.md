@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Form Builder - React Application
 
 A modern, responsive form builder application built with React, Vite, and Tailwind CSS. This application allows users to create custom forms with three unique question types: Categorize, Cloze, and Comprehension.
@@ -182,13 +182,12 @@ form-builder/
 - **Node.js** (v16 or higher)
 - **MongoDB** (local installation or MongoDB Atlas)
 - **npm** or **yarn** package manager
->>>>>>> a55dcf2c2a0c3fe82e7d320b99c2515f82e57740
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-<<<<<<< HEAD
+
    git clone [repository-url]
    cd form-builder/frontend
    ```
@@ -313,7 +312,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
+
    git clone <repository-url>
    cd form-builder
    ```
@@ -476,4 +475,4 @@ For support, email [your-email@example.com] or create an issue in the repository
 ---
 
 **Built with ❤️ using the MERN Stack**
->>>>>>> a55dcf2c2a0c3fe82e7d320b99c2515f82e57740
+
