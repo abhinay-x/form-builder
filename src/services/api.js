@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5052/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://formbuilder-backend-pi.vercel.app/api',
   timeout: 30000,
   headers: {
     'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
@@ -12,7 +12,7 @@ const api = axios.create({
 
 // Public API instance (no auth required)
 const publicApi = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5052/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://formbuilder-backend-pi.vercel.app/api',
   timeout: 30000
 });
 
